@@ -3,18 +3,18 @@ const jwt = require('jsonwebtoken');
 const bearerToken = require('express-bearer-token');
 
 //internal routes
-const {User} = require('./db/models');
+const {Users} = require('./db/models')
 const {secret, expiresIn} = require('./config').jwtConfig;
 
-//function to create a user token
-getUserToken = (user) => {
-  const userData = {
-    id: user.id,
-    email: user.email
+//function to create a users token
+const getusersToken = (users) => {
+  const usersData = {
+    id: users.id,
+    email: users.email
   }
 
   const token = jwt.sign(
-    {data:userData},
+    {data:usersData},
     secret,
     {expiresIn: parseInt(expiresIn, 10)}
   )
@@ -38,12 +38,12 @@ const autoRefresh = (req, res, next) =>  {
     const {id} = jwtPayload.data;
 
     try {
-      req.user = await User.findbyPk(id);
+      req.users = await Users.findbyPk(id);
     } catch(error) {
       return next(error);
     }
 
-    if(!req.user) {
+    if(!req.users) {
       return res.set("WWW-Authenticate", "Bearer").status(401).end();
     }
 
@@ -52,7 +52,7 @@ const autoRefresh = (req, res, next) =>  {
 }
 
 
-const restoreUser = (req,res,next) => {
+const restoreusers = (req,res,next) => {
   const {token} = req;
 
   if(!token && (req.path === '/sign-in' || req.path === '/register')) {
@@ -78,12 +78,12 @@ const restoreUser = (req,res,next) => {
     const { id } = jwtPayload.data;
 
     try {
-      req.user = await User.findByPk(id);
+      req.users = await Users.findByPk(id);
     } catch (error) {
       return next(error);
     }
 
-    if (!req.user) {
+    if (!req.users) {
       return res.set("WWW-Authenticate", "Bearer").status(401).end();
     }
 
@@ -93,8 +93,8 @@ const restoreUser = (req,res,next) => {
 
 
 
-const authCheck = [bearerToken(), authRefresh]
+const authCheck = [bearerToken(), autoRefresh]
 
-const userValidation = [bearerToken({ cookie: { signed: true, secret, key: "accessToken" } }), restoreUser]
+const usersValidation = [bearerToken({ cookie: { signed: true, secret, key: "accessToken" } }), restoreusers]
 
-module.exports = { getUserToken, authCheck, userValidation };
+module.exports = {getusersToken, authCheck, usersValidation };

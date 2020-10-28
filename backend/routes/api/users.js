@@ -5,7 +5,7 @@ const { check } = require("express-validator");
 
 const { asyncHandler, handleValidationErrors } = require("../utils");
 const { getUserToken } = require("../../auth");
-const { User, List} = require("../../db/models");
+const { User} = require("../../db/models");
 
 const router = express.Router();
 
@@ -74,17 +74,7 @@ router.post("/",
         hashedPassword
       }
     );
-
-    const newUser = await User.findOne({
-      where: {
-        email
-      }
-    });
-    const userId = newUser.id;
-
     const token = await getUserToken(user);
-    res.cookie("accessToken", token, { httpOnly: true });
-
     res.status(201).json({
       user: { id: user.id },
       token
@@ -135,3 +125,6 @@ router.get('/:id/homes', asyncHandler(async (req, res) => {
   });
   res.json({ homes });
 }));
+
+
+module.exports = router

@@ -5,7 +5,7 @@ const { check } = require("express-validator");
 
 const { asyncHandler, handleValidationErrors } = require("../utils");
 const { getUserToken } = require("../../auth");
-const { User} = require("../../db/models");
+const { Users} = require("../../db/models");
 
 const router = express.Router();
 
@@ -37,7 +37,7 @@ const sharedAuthValidations = [
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
   const userId = req.params.id;
-  const user = await User.findByPk(userId);
+  const user = await Users.findByPk(userId);
   const name = user.firstName;
 
 
@@ -57,7 +57,6 @@ router.post("/",
   handleValidationErrors,
   asyncHandler(async (req, res) => {
     const {
-      userName,
       firstName,
       lastName,
       email,
@@ -65,11 +64,10 @@ router.post("/",
     } = req.body;
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await User.create(
+    const user = await Users.create(
       {
         firstName,
         lastName,
-        userName,
         email,
         hashedPassword
       }
@@ -87,7 +85,7 @@ router.post("/",
 router.post("/token", sharedAuthValidations,
   asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
-    const user = await User.findOne(
+    const user = await Users.findOne(
       {
         where: { email }
       }

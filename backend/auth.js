@@ -7,7 +7,7 @@ const {Users} = require('./db/models')
 const {secret, expiresIn} = require('./config').jwtConfig;
 
 //function to create a users token
-const getusersToken = (users) => {
+const getUserToken = (users) => {
   const usersData = {
     id: users.id,
     email: users.email
@@ -97,4 +97,4 @@ const authCheck = [bearerToken(), autoRefresh]
 
 const usersValidation = [bearerToken({ cookie: { signed: true, secret, key: "accessToken" } }), restoreusers]
 
-module.exports = {getusersToken, authCheck, usersValidation };
+module.exports = {getUserToken, authCheck, usersValidation };

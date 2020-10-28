@@ -1,5 +1,6 @@
 //external requires
-
+const {environment} = require('./config')
+const cors = require('cors')
 const express = require("express");
 const morgan = require("morgan");
 const { ValidationError } = require("sequelize");
@@ -14,6 +15,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/api/users");
 
 const app = express();
+app.use(cors({origin: true}))
 //external use statements
 app.use(morgan("dev"));
 app.use(express.json());

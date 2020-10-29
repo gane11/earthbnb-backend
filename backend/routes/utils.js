@@ -1,4 +1,8 @@
 const { validationResult } = require("express-validator");
+const bearerToken = require('express-bearer-token');
+const jwt = require('jsonwebtoken');
+const uuid = require('uuid').v4;
+const { jwtConfig: { secret, expiresIn } } = require('../config');
 
 const asyncHandler = (handler) => (req, res, next) =>
   handler(req, res, next).catch(next);
@@ -18,5 +22,16 @@ const handleValidationErrors = (req, res, next) => {
   next();
 };
 
+function generateToken(player) {
+  const data = {
+    name: player.name,
+  };
+  const jwtid = uuid();
 
-module.exports = { asyncHandler, handleValidationErrors };
+  return {
+    jti: jwtid,
+    token: jwt.sign({ data }, secret, { expiresIn: Number.parseInt(expiresIn), jwtid })
+  };
+}
+
+module.exports = { asyncHandler, handleValidationErrors,generateToken};

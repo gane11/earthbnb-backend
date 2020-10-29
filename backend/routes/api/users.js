@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const { check } = require("express-validator");
 
 
-const { asyncHandler, handleValidationErrors } = require("../utils");
+const { asyncHandler, handleValidationErrors, generateToken} = require("../utils");
 const { getUserToken } = require("../../auth");
 const { Users} = require("../../db/models");
 
@@ -84,13 +84,14 @@ router.post("/",
 // sign in
 router.post("/token", sharedAuthValidations,
   asyncHandler(async (req, res, next) => {
+    debugger
     const { email, password } = req.body;
+    // const user = await Users.findByEmail(email)
     const user = await Users.findOne(
       {
         where: { email }
       }
     );
-
     if (!user || !user.validatePassword(password)) {
       const error = new Error("Invalid credentials");
       error.status = 401;
@@ -98,10 +99,13 @@ router.post("/token", sharedAuthValidations,
       error.errors = ["Unable to authenticate provided information. Please check user name and/or password."];
       return next(error);
     }
-
-    const token = getUserToken(user);
-    res.cookie("accessToken", token, { httpOnly: true });
-    res.json({ token, user: { id: user.id, userName: user.userName } });
+    const {jti, token} = generateToken(user)
+    user.tokenId = jti
+    await user.save();
+    res.json({ 
+      user: { id: user.id },
+      token
+    });
   })
 );
 

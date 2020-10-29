@@ -109,9 +109,10 @@ router.post("/token", sharedAuthValidations,
   })
 );
 
-router.delete("/token", asyncHandler(async (req, res, next) => {
-  res.clearCookie("accessToken");
-  res.status(200).end();
+router.delete("/", asyncHandler(async (req, res, next) => {
+  req.user.tokenId = null;
+  await req.user.save();
+  res.json({message: 'success'})
 }))
 
 

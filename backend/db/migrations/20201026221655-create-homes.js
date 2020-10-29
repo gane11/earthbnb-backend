@@ -36,6 +36,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT
       },
+      image: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       hostId: {
         allowNull: false,
         type: Sequelize.INTEGER,

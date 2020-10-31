@@ -110,8 +110,7 @@ router.post("/token", sharedAuthValidations,
 );
 
 router.delete("/", asyncHandler(async (req, res, next) => {
-  req.user.tokenId = null;
-  await req.user.save();
+  req.tokenId = null
   res.json({message: 'success'})
 }))
 

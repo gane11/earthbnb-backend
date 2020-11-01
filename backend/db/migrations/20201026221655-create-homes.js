@@ -40,6 +40,22 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      image2: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      image3: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      image4: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      image5: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       hostId: {
         allowNull: false,
         type: Sequelize.INTEGER,

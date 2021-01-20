@@ -129,4 +129,14 @@ router.get('/:id/homes', asyncHandler(async (req, res) => {
 }));
 
 
+///get all users 
+router.get('/', asyncHandler(async(req, res) => {
+  const users = await Users.findAll({
+    order: [['createdAt', 'DESC']],
+  })
+
+  res.json({users})
+}))
+
+
 module.exports = router

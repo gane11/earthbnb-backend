@@ -146,7 +146,7 @@ module.exports = {
           bathrooms and views to die also enjoy your own private balcony overlooking City.. 
           gourmet kitchen top of the line appliances fully equipped kitchen also with everything
            you can imagine we also give our guests complementary bottled water chocolate champagne Nespresso coffee`,
-          image:'https://s3.console.aws.amazon.com/s3/object/earhbnb0images/ny-penthouse-2.jpg?region=us-east-2',
+          image:'https://earhbnb0images.s3.us-east-2.amazonaws.com/ny-penthouse-2.jpg',
           image2: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/ny-image-2.jpg',
           image3: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/ny-image-3.jpg',
           image4: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/ny-image-4.jpg',

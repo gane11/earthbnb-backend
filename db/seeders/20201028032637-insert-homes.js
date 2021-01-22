@@ -314,8 +314,8 @@ module.exports = {
           name: 'Downtown Austin Apartmant',
           city: 'Austin',
           state: 'Texas',
-          lng: -97.7611536,
-          lat: 30.2666092,
+          lng: -97.7474419,
+          lat: 30.2604176,
           price: 300,
           description: `Stay for 30+ nights (minimum nights and rates are FIRM) where you’ll
            have the entire apartment all to yourself at Ashton Austin. The apartment has beautiful
@@ -336,8 +336,8 @@ module.exports = {
           name: 'Downtown Austin Apartmant 2',
           city: 'Austin',
           state: 'Texas',
-          lng: -97.7611536,
-          lat: 30.2666092,
+          lng: -97.7474419,
+          lat: 30.2604176,
           price: 320,
           description: `Located in a high rise building in the highly desirable Westside 
           midtown with private elevator into your penthouse suite. The balcony offers 
@@ -362,8 +362,8 @@ module.exports = {
           name: 'Downtown Austin Apartmant 3',
           city: 'Austin',
           state: 'Texas',
-          lng: -97.7611536,
-          lat: 30.2666092,
+          lng: -97.7474419,
+          lat: 30.2604176,
           price: 250,
           description: `Located in a high rise building in the highly desirable Westside 
           midtown with private elevator into your penthouse suite. The balcony offers 
@@ -414,8 +414,8 @@ module.exports = {
           name: 'Downtown Austin Apartmant 5',
           city: 'Austin',
           state: 'Texas',
-          lng: -97.7635025,
-          lat: 30.2659339,
+          lng: -97.7474419,
+          lat: 30.2604176,
           price: 322,
           description: `Located in a high rise building in the highly desirable Westside 
           midtown with private elevator into your penthouse suite. The balcony offers 
@@ -493,8 +493,8 @@ module.exports = {
           name: 'Los Angeles Mansion 2',
           city: 'Los Angeles',
           state: 'California',
-          lng: -118.395272,
-          lat: 34.0877906,
+          lng: -118.3914373,
+          lat: 34.0951389,
           price: 4000,
           description: `Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary 
           home perfect for 14-16 guests. Featuring new jetted hot tub, theater, 5 bedrooms 
@@ -519,8 +519,8 @@ module.exports = {
           name: 'Los Angeles Mansion 3',
           city: 'Los Angeles',
           state: 'California',
-          lng: -118.395272,
-          lat: 34.0877906,
+          lng: -118.3914373,
+          lat: 34.0951389,
           price: 2000,
           description: `Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary 
           home perfect for 14-16 guests. Featuring new jetted hot tub, theater, 5 bedrooms 
@@ -545,8 +545,8 @@ module.exports = {
           name: 'Los Angeles Mansion 4',
           city: 'Los Angeles',
           state: 'California',
-          lng: -118.395272,
-          lat: 34.0877906,
+          lng: -118.3914373,
+          lat: 34.0951389,
           price: 1500,
           description: `Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary 
           home perfect for 14-16 guests. Featuring new jetted hot tub, theater, 5 bedrooms 
@@ -571,8 +571,8 @@ module.exports = {
           name: 'Los Angeles Mansion 5',
           city: 'Los Angeles',
           state: 'California',
-          lng: -118.395272,
-          lat: 34.0877906,
+          lng: -118.3914373,
+          lat: 34.0951389,
           price: 5000,
           description: `Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary 
           home perfect for 14-16 guests. Featuring new jetted hot tub, theater, 5 bedrooms 
@@ -624,8 +624,8 @@ module.exports = {
           name: 'Downtown San Francisco Penthouse',
           city: 'San Francisco',
           state: 'California',
-          lng: -122.4104862,
-          lat: 37.7868413,
+          lng: -122.396187,
+          lat: 37.7893991,
           price: 10000,
           description: `Downtown San Francisco Penthouse with rooftop terrace takes full advantage of 
           its dramatic views from the Bay Bridge to Twin Peaks and allows residents a remarkable 
@@ -676,8 +676,8 @@ module.exports = {
           name: 'Downtown San Francisco Penthouse 3',
           city: 'San Francisco',
           state: 'California',
-          lng: -122.4104862,
-          lat: 37.7868413,
+          lng: -122.3959688,
+          lat: 37.7958421,
           price: 23000,
           description: `Downtown San Francisco Penthouse with rooftop terrace takes full advantage of 
           its dramatic views from the Bay Bridge to Twin Peaks and allows residents a remarkable 
@@ -702,8 +702,8 @@ module.exports = {
           name: 'Downtown San Francisco Penthouse 4',
           city: 'San Francisco',
           state: 'California',
-          lng: -122.4104862,
-          lat: 37.7868413,
+          lng: -122.4025348,
+          lat: 37.7958421,
           price: 30000,
           description: `Downtown San Francisco Penthouse with rooftop terrace takes full advantage of 
           its dramatic views from the Bay Bridge to Twin Peaks and allows residents a remarkable 
@@ -715,7 +715,7 @@ module.exports = {
              Guest bedrooms with en suite baths. Laundry room with sink a side-by-side washer/dryer. Service entry.
               SF's newest luxury condo tower, developed by Related, designed by OMA, The Avery offers lifestyle of
                amenities and services including attended lobby, valet parking, fitness studio, pool, entertainment lounges & more.`,
-          image: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/sanfran/sf-penthouse-4.jpg',
+          image: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/sanfran/sf-penthouse-4.jpeg',
           image2: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/sanfran/sf-image-2.jpg',
           image3: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/sanfran/sf-image-3.jpg',
           image4: 'https://earhbnb0images.s3.us-east-2.amazonaws.com/sanfran/sf-image-4.jpg',
@@ -728,8 +728,8 @@ module.exports = {
           name: 'Downtown San Francisco Penthouse 5',
           city: 'San Francisco',
           state: 'California',
-          lng: -122.4104862,
-          lat: 37.7868413,
+          lng: -122.4025348,
+          lat: 37.7958421,
           price: 15000,
           description: `Downtown San Francisco Penthouse with rooftop terrace takes full advantage of 
           its dramatic views from the Bay Bridge to Twin Peaks and allows residents a remarkable 
@@ -754,8 +754,8 @@ module.exports = {
           name: 'Downtown San Francisco Penthouse 6',
           city: 'San Francisco',
           state: 'California',
-          lng: -122.4104862,
-          lat: 37.7868413,
+          lng: -122.4025348,
+          lat: 37.7958421,
           price: 24000,
           description: `Downtown San Francisco Penthouse with rooftop terrace takes full advantage of 
           its dramatic views from the Bay Bridge to Twin Peaks and allows residents a remarkable 

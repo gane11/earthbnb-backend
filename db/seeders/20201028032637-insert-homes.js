@@ -314,8 +314,8 @@ module.exports = {
           name: 'Downtown Austin Apartmant',
           city: 'Austin',
           state: 'Texas',
-          lng: -97.7474419,
-          lat: 30.2604176,
+          lng: -97.7491052,
+          lat: 30.2746698,
           price: 300,
           description: `Stay for 30+ nights (minimum nights and rates are FIRM) where you’ll
            have the entire apartment all to yourself at Ashton Austin. The apartment has beautiful
@@ -337,7 +337,7 @@ module.exports = {
           city: 'Austin',
           state: 'Texas',
           lng: -97.7474419,
-          lat: 30.2604176,
+          lat: 30.2746698,
           price: 320,
           description: `Located in a high rise building in the highly desirable Westside 
           midtown with private elevator into your penthouse suite. The balcony offers 
@@ -362,8 +362,8 @@ module.exports = {
           name: 'Downtown Austin Apartmant 3',
           city: 'Austin',
           state: 'Texas',
-          lng: -97.7474419,
-          lat: 30.2604176,
+          lng: -97.7491052,
+          lat: 30.2746698,
           price: 250,
           description: `Located in a high rise building in the highly desirable Westside 
           midtown with private elevator into your penthouse suite. The balcony offers 
@@ -440,8 +440,8 @@ module.exports = {
           name: 'Downtown Austin Apartmant 6',
           city: 'Austin',
           state: 'Texas',
-          lng: -97.7635025,
-          lat: 30.2659339,
+          lng: -97.7729163,
+          lat: 30.2683,
           price: 243,
           description: `Located in a high rise building in the highly desirable Westside 
           midtown with private elevator into your penthouse suite. The balcony offers 
@@ -493,7 +493,7 @@ module.exports = {
           name: 'Los Angeles Mansion 2',
           city: 'Los Angeles',
           state: 'California',
-          lng: -118.3914373,
+          lng: -118.3761165,
           lat: 34.0951389,
           price: 4000,
           description: `Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary 
@@ -519,7 +519,7 @@ module.exports = {
           name: 'Los Angeles Mansion 3',
           city: 'Los Angeles',
           state: 'California',
-          lng: -118.3914373,
+          lng: -118.3826825,
           lat: 34.0951389,
           price: 2000,
           description: `Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary 
@@ -545,7 +545,7 @@ module.exports = {
           name: 'Los Angeles Mansion 4',
           city: 'Los Angeles',
           state: 'California',
-          lng: -118.3914373,
+          lng: -118.3783052,
           lat: 34.0951389,
           price: 1500,
           description: `Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary 
@@ -702,8 +702,8 @@ module.exports = {
           name: 'Downtown San Francisco Penthouse 4',
           city: 'San Francisco',
           state: 'California',
-          lng: -122.4025348,
-          lat: 37.7958421,
+          lng: -122.4058899,
+          lat: 37.7971277,
           price: 30000,
           description: `Downtown San Francisco Penthouse with rooftop terrace takes full advantage of 
           its dramatic views from the Bay Bridge to Twin Peaks and allows residents a remarkable 
@@ -728,8 +728,8 @@ module.exports = {
           name: 'Downtown San Francisco Penthouse 5',
           city: 'San Francisco',
           state: 'California',
-          lng: -122.4025348,
-          lat: 37.7958421,
+          lng: -122.3946338,
+          lat: 37.7754269,
           price: 15000,
           description: `Downtown San Francisco Penthouse with rooftop terrace takes full advantage of 
           its dramatic views from the Bay Bridge to Twin Peaks and allows residents a remarkable 

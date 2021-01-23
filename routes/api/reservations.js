@@ -10,12 +10,32 @@ const { Homes, Users, Reservations} = db;
 
 //create a new Reservation
 
-router.post('/reservations', asyncHandler(async(req,res)=> {
-  const homeId = req.params.id 
-  const {newReservation } = req.body
-  const reservation = await Reservations.create({ homeId,
+router.post('/', asyncHandler(async(req,res)=> {
+  // const homeId = req.params.id 
+  const { 
+    homeId,
+    userId,
+    numPeople,
+    startDate,
+    endDate 
+  } = req.body
+  let reservation = await Reservations.create({ 
+    homeId,
+    userId,
+    numPeople,
+    startDate,
+    endDate
     
   })
+  reservation = await Reservations.findOne({
+    where: {
+      id: reservation.id
+    },
+  });
+
+  res.json({ reservation: [reservation] });
+
 }))
 
 
+module.exports = router

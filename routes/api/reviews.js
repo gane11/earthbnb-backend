@@ -9,18 +9,18 @@ const db = require('../../db/models');
 
 const { Users, Homes, Reviews } = db;
 
-const validateReview = [
-  check('title')
-    .exists({ checkFalsy: true })
-    .withMessage("Title name can't be undefined."),
-  check('title')
-    .isLength({ max: 50 })
-    .withMessage("Title can't be longet than 50 characters."),
-  check('rating')
-    .exists({ checkFalsy: true })
-    .withMessage("Rating can't be undefined"),
-  handleValidationErrors,
-];
+// const validateReview = [
+//   check('title')
+//     .exists({ checkFalsy: true })
+//     .withMessage("Title name can't be undefined."),
+//   check('title')
+//     .isLength({ max: 50 })
+//     .withMessage("Title can't be longet than 50 characters."),
+//   check('rating')
+//     .exists({ checkFalsy: true })
+//     .withMessage("Rating can't be undefined"),
+//   handleValidationErrors,
+// ];
 
 
 const homeNotFoundError = (id) => {
@@ -70,13 +70,39 @@ router.get('/:homeId/reviews', asyncHandler(async (req, res) => {
 }))
 
 // create a new review and store it in the database
-router.post('/:homeId/reviews/create-review',validateReview, asyncHandler(async (req, res) => {
+router.post('', asyncHandler(async (req, res) => {
 
-  const { newReview, homeId } = req.body;
-  const review = await Reviews.create({
-    reviewName: newReview,
-    homeId: homeId
+  const {
+    description,
+    userId,
+    homeId
+  } = req.body
+  let review = await Reviews.create({
+    description,
+    userId,
+    homeId
+
   })
-  
-  res.json({ review })
+  review = await Reviews.findOne({
+    where: {
+      id: review.id
+    },
+  });
+
+  res.json({ review: [review] });
 }))
+
+router.delete("/:id", asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+  console.log(id)
+  const review = await Reviews.findOne({
+    where: { id }
+  });
+
+  await review.destroy();
+  res.status(200).json({ review});
+
+}))
+
+
+module.exports = router

@@ -139,4 +139,19 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 
+// router.delete("/:userId/homes/:homeId/reviews", asyncHandler(async (req, res, next) => {
+//   const userId = parseInt(req.params.userId, 10);
+//   const homeId = parseInt(req.params.homeId, 10)
+//   const review = await Homes.findOne({
+//     where: {
+//       userId,
+//       homeId
+//     },
+//     // include: [{ model: Task,as:"task",attributes: ['taskName'] } ],
+//     order: [['createdAt', 'DESC']],
+//   });
+//   res.json({ review });
+// }))
+
+
 module.exports = router

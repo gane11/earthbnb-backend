@@ -8,17 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        allowNull: false,
-        type: Sequelize.STRING(50)
-      },
+
       description: {
         allowNull: false,
         type: Sequelize.TEXT
-      },
-      rating: {
-        allowNull: false,
-        type: Sequelize.INTEGER
       },
       userId: {
         allowNull: false,

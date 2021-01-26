@@ -94,7 +94,7 @@ router.post('', asyncHandler(async (req, res) => {
 
 router.delete("/:id", asyncHandler(async (req, res, next) => {
   const { id } = req.params;
-  console.log(id)
+
   const review = await Reviews.findOne({
     where: { id }
   });

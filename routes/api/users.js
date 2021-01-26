@@ -5,7 +5,7 @@ const { check } = require("express-validator");
 
 const { asyncHandler, handleValidationErrors, generateToken} = require("../utils");
 const { getUserToken } = require("../../auth");
-const { Users} = require("../../db/models");
+const { Users, Reservations} = require("../../db/models");
 
 const router = express.Router();
 
@@ -102,6 +102,7 @@ router.post("/token", sharedAuthValidations,
     const {jti, token} = generateToken(user)
     user.tokenId = jti
     await user.save();
+    // localStorage.setItem('userId', user.id)
     res.json({ 
       user: { id: user.id },
       token
@@ -153,5 +154,14 @@ router.get('/', asyncHandler(async(req, res) => {
 //   res.json({ review });
 // }))
 
+router.get('/:id/reservations', asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const savedHomes = await Reservations.findAll({
+    where: {
+      userId
+    }
+  })
+  res.json({ savedHomes })
+}))
 
 module.exports = router

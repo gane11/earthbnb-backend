@@ -38,4 +38,16 @@ router.post('/', asyncHandler(async(req,res)=> {
 }))
 
 
+router.delete("/:id", asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+
+  const reservation = await Reservations.findOne({
+    where: { id }
+  });
+
+  await reservation.destroy();
+  res.status(200).json({ reservation });
+
+}))
+
 module.exports = router

@@ -22,9 +22,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-// app.use("/api/users", usersRouter);
-// app.use("/api/lists", listRouter);
-// app.use('/api/tasks', displayTasks);
+app.use("/api/users", usersRouter);
+app.use("/api/lists", listRouter);
+app.use('/api/tasks', displayTasks);
 
 // unhandled requests
 app.use((req, res, next) => {

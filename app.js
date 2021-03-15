@@ -11,7 +11,7 @@ const path = require("path");
 // internal requires
 
 const indexRouter = require("./routes/index");
-// const homeRouter = require("./routes/api/homes");
+const homeRouter = require("./routes/api/homes");
 const usersRouter = require("./routes/api/users");
 
 const app = express();
@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
-app.use("/api/lists", listRouter);
-app.use('/api/tasks', displayTasks);
+app.use("/api/homes", homeRouter);
+// app.use('/api/tasks', displayTasks);
 
 // unhandled requests
 app.use((req, res, next) => {

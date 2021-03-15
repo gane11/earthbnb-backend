@@ -16,7 +16,7 @@ const usersRouter = require("./routes/api/users");
 
 const app = express();
 app.use(cors({origin: true}))
-//external use statements
+
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));

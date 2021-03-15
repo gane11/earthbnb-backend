@@ -11,8 +11,8 @@ const path = require("path");
 // internal requires
 
 const indexRouter = require("./routes/index");
-const homeRouter = require("./routes/api/homes");
-const usersRouter = require("./routes/api/users");
+// const homeRouter = require("./routes/api/homes");
+// const usersRouter = require("./routes/api/users");
 
 const app = express();
 app.use(cors({origin: true}))
@@ -22,8 +22,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/api/users", usersRouter);
-app.use("/api/homes", homeRouter);
+// app.use("/api/users", usersRouter);
+// app.use("/api/homes", homeRouter);
 // app.use('/api/tasks', displayTasks);
 
 // unhandled requests

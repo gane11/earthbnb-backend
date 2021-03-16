@@ -22,7 +22,8 @@ module.exports = {
     dialectOptions: {
       dateStrings: true,
       typeCast: true,
-      ssl: true
+      ssl: true,
+      // connectionString: connectionString
     },
   }
 };
